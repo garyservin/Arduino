@@ -195,6 +195,21 @@ atmega328_pro8_isp: LFUSE = FF
 atmega328_pro8_isp: EFUSE = 05
 atmega328_pro8_isp: isp
 
+rodi: TARGET = rodi
+rodi: MCU_TARGET = atmega328p
+rodi: CFLAGS += '-DMAX_TIME_COUNT=F_CPU>>4' '-DNUM_LED_FLASHES=1' -DBAUD_RATE=57600 -DDOUBLE_SPEED
+rodi: AVR_FREQ = 8000000L
+rodi: LDSECTION  = --section-start=.text=0x7800
+rodi: $(PROGRAM)_rodi.hex
+
+rodi_isp: rodi
+rodi_isp: TARGET = rodi
+rodi_isp: MCU_TARGET = atmega328p
+rodi_isp: HFUSE = DA
+rodi_isp: LFUSE = E2
+rodi_isp: EFUSE = 05
+rodi_isp: isp
+
 mega: TARGET = atmega1280
 mega: MCU_TARGET = atmega1280
 mega: CFLAGS += '-DMAX_TIME_COUNT=F_CPU>>4' '-DNUM_LED_FLASHES=0' -DBAUD_RATE=57600
