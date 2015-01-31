@@ -430,7 +430,7 @@ int main(void)
 
 	/* 20050803: by DojoCorp, this is one of the parts provoking the
 		 system to stop listening, cancelled from the original */
-	//putch('\0');
+	putch('\0');
 
 	/* forever loop */
 	for (;;) {
