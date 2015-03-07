@@ -207,7 +207,7 @@ rodi_isp: TARGET = rodi
 rodi_isp: MCU_TARGET = atmega328p
 rodi_isp: HFUSE = DA
 rodi_isp: LFUSE = E2
-rodi_isp: EFUSE = 05
+rodi_isp: EFUSE = 07
 rodi_isp: isp
 
 mega: TARGET = atmega1280
